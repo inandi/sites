@@ -56,7 +56,7 @@ class LoadJs {
         if (this.isLatest) {
             liElement.className += ' active ';
         }
-        liElement.innerHTML = `<a href="${this.hostURL}policy.html">${this.latestVersion}</a>`;
+        liElement.innerHTML = `<a href="${this.hostURL}policy.html">${this.latestVersion} (latest)</a>`;
         ulElement.appendChild(liElement);
 
         // handle old version
