@@ -8,6 +8,8 @@
  * @param {string} thisPolicyCreationURL - The URL for policy creation.
  * @param {boolean} isLatest - Indicates whether this is the latest version.
  * @param {string} selfVersion - The version of the current page.
+ * 
+ * @author Gobinda Nandi
  */
 class LoadJs {
 
