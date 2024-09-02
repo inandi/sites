@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smoking</title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../../../../assets/ic_logo-playstore.png">
+    <link rel="stylesheet" href="../../../../assets/style.css">
 </head>
+
 <body>
-    <p>About</p>
+
+    <div class="sidebar">
+        <h4 style="text-align: center;" id="page-name"></h4>
+        <div id="versionList"></div>
+        <p class="footer"><small class="donation" id="donation"></small><small id="page-copyright-text"></small></p>
+    </div>
+
+    <div class="content">
+        <h4><small id="page-version-name"></small></h4>
+
+        <!-- content ++ -->
+ 
+
+        <!-- content -- -->
+
+    </div>
+
+    <script src="../../../../assets/main.js"></script>
+
+    <script>
+        let pageTitle = 'Quit Smoking - Android App';
+        let pageName = 'About Us';
+        let thisPolicyCreationURL = '2024';
+        let isLatest = false;
+        let selfVersion = 'v0.1';
+        let fileName = 'about';
+
+        const pageJS = new LoadJs(pageTitle, pageName, thisPolicyCreationURL, isLatest, selfVersion, fileName);
+        pageJS.load();
+    </script>
 </body>
+
 </html>

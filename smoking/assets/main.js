@@ -47,7 +47,19 @@ class LoadJs {
         document.getElementById('page-name').textContent = this.pageName;
         document.getElementById('page-version-name').textContent = `verion ${this.selfVersion}`;
         this.prepCopyright();
-        this.createVersionList()
+        this.createVersionList();
+        this.donationTag();
+    }
+
+    /**
+     * coffee tag
+     */
+    donationTag() {
+        const donationContainer = document.getElementById('donation');
+        const anchor = document.createElement('a');
+        anchor.href = `https://www.buymeacoffee.com/iGobinda`;
+        anchor.text = `Buy me coffee`;
+        donationContainer.append(anchor);
     }
 
     /**
@@ -57,28 +69,28 @@ class LoadJs {
         const ulElement = document.getElementById('versionList');
         // handle latest version
         const hyphenatedVersion = this.convertToHyphenatedVersion(this.latestVersion);
-        const liElement = document.createElement('a');
-        liElement.className = `version--${hyphenatedVersion}`;
+        const listAnchorElement = document.createElement('a');
+        listAnchorElement.className = `version--${hyphenatedVersion}`;
         if (this.isLatest) {
-            liElement.className += ' active ';
+            listAnchorElement.className += ' active ';
         }
-        liElement.innerHTML = `${this.latestVersion} (latest)`;
-        liElement.href = `${this.hostURL}${this.fileName}.html`;
-        ulElement.appendChild(liElement);
+        listAnchorElement.innerHTML = `${this.latestVersion} (latest)`;
+        listAnchorElement.href = `${this.hostURL}${this.fileName}.html`;
+        ulElement.appendChild(listAnchorElement);
 
         // handle old version
         const oldVersionsArray = this.oldVersions();
         oldVersionsArray.forEach(version => {
             const hyphenatedVersion = this.convertToHyphenatedVersion(version);
-            const liElement = document.createElement('a');
+            const listAnchorElement = document.createElement('a');
 
-            liElement.className = `version--${hyphenatedVersion}`;
+            listAnchorElement.className = `version--${hyphenatedVersion}`;
             if (version == this.selfVersion) {
-                liElement.className += ' active ';
+                listAnchorElement.className += ' active ';
             }
-            liElement.innerHTML = `${version}`;
-            liElement.href = `${this.hostURL}url/${this.fileName}/version/${hyphenatedVersion}/${this.fileName}.html`;
-            ulElement.appendChild(liElement);
+            listAnchorElement.innerHTML = `${version}`;
+            listAnchorElement.href = `${this.hostURL}url/${this.fileName}/version/${hyphenatedVersion}/${this.fileName}.html`;
+            ulElement.appendChild(listAnchorElement);
         });
     }
 
