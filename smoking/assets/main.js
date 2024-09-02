@@ -5,9 +5,10 @@
  * @description Handles loading and rendering page content, including title, version information, and copyright text.
  * @param {string} pageTitle - The title of the page.
  * @param {string} pageName - The name of the page.
- * @param {string} thisPolicyCreationURL - The URL for policy creation.
+ * @param {string} thisPageCreationYear - The year of page creation.
  * @param {boolean} isLatest - Indicates whether this is the latest version.
  * @param {string} selfVersion - The version of the current page.
+ * @param {string} fileName - The filename or dir name of page e.g. policy, terms, about
  * 
  * @author Gobinda Nandi
  */
@@ -17,16 +18,18 @@ class LoadJs {
      * @constructor
      * @param {string} pageTitle 
      * @param {string} pageName 
-     * @param {string} thisPolicyCreationURL 
+     * @param {string} thisPageCreationYear 
      * @param {bool} isLatest 
      * @param {string} selfVersion 
+     * @param {string} fileName 
      */
-    constructor(pageTitle, pageName, thisPolicyCreationURL, isLatest, selfVersion) {
+    constructor(pageTitle, pageName, thisPageCreationYear, isLatest, selfVersion, fileName) {
         this.pageTitle = pageTitle;
         this.pageName = pageName;
-        this.thisPolicyCreationURL = thisPolicyCreationURL;
+        this.thisPageCreationYear = thisPageCreationYear;
         this.isLatest = isLatest;
         this.selfVersion = selfVersion;
+        this.fileName = fileName;
         this.hostURL = "https://inandi.github.io/sites/smoking/";
 
         /**
@@ -58,7 +61,7 @@ class LoadJs {
         if (this.isLatest) {
             liElement.className += ' active ';
         }
-        liElement.innerHTML = `<a href="${this.hostURL}policy.html">${this.latestVersion} (latest)</a>`;
+        liElement.innerHTML = `<a href="${this.hostURL}${this.fileName}.html">${this.latestVersion} (latest)</a>`;
         ulElement.appendChild(liElement);
 
         // handle old version
@@ -71,7 +74,7 @@ class LoadJs {
             if (version == this.selfVersion) {
                 liElement.className += ' active ';
             }
-            liElement.innerHTML = `<a href="${this.hostURL}url/policy/version/${hyphenatedVersion}/policy.html">${version}</a>`;
+            liElement.innerHTML = `<a href="${this.hostURL}url/${this.fileName}/version/${hyphenatedVersion}/${this.fileName}.html">${version}</a>`;
             ulElement.appendChild(liElement);
         });
     }
@@ -109,7 +112,7 @@ class LoadJs {
         if (this.isLatest) {
             text += current;
         } else {
-            text += this.thisPolicyCreationURL;
+            text += this.thisPageCreationYear;
         }
         document.getElementById('page-copyright-text').textContent = text;
     }

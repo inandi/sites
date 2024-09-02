@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smoking</title>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../../../../assets/ic_logo-playstore.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 7%;
+        }
+
+        /* page content bottom padding */
+        .page--content {
+            padding-bottom: 70px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <p>contact</p>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <h4 id="page-name"></h4>
+                <ul class="nav nav-pills nav-stacked" id="versionList">
+                </ul>
+            </div>
+
+            <div class="col-sm-10 page--content">
+                <h4><small id="page-version-name"></small></h4>
+                <hr>
+
+                <!-- content ++ -->
+
+
+
+                <!-- content -- -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid">
+        <p id="page-copyright-text"></p>
+    </footer>
+
+    <script src="../../../../assets/main.js"></script>
+
+    <script>
+        let pageTitle = 'Quit Smoking - Android App';
+        let pageName = 'Terms & Conditions';
+        let thisPolicyCreationURL = '2024';
+        let isLatest = false;
+        let selfVersion = 'v0.1';
+        let fileName = 'terms';
+
+        const pageJS = new LoadJs(pageTitle, pageName, thisPolicyCreationURL, isLatest, selfVersion, fileName);
+        pageJS.load();
+    </script>
 </body>
+
 </html>
