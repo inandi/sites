@@ -59,6 +59,8 @@ class LoadJs {
         const anchor = document.createElement('a');
         anchor.href = `https://www.buymeacoffee.com/iGobinda`;
         anchor.text = `Buy me coffee`;
+        anchor.style.display = 'block';
+        anchor.style.textAlign = 'center';
         donationContainer.append(anchor);
     }
 
