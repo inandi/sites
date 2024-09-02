@@ -6,74 +6,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="../../../../assets/ic_logo-playstore.png">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-        .row.content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 7%;
-        }
-
-        /* page content bottom padding */
-        .page--content {
-            padding-bottom: 70px;
-        }
-
-        /* On small screens, set height to 'auto' for sidenav and grid */
-        @media screen and (max-width: 767px) {
-            .sidenav {
-                height: auto;
-                padding: 15px;
-            }
-
-            .row.content {
-                height: auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../../../../assets/style.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-2 sidenav">
-                <h4 id="page-name"></h4>
-                <ul class="nav nav-pills nav-stacked" id="versionList">
-                </ul>
-            </div>
 
-            <div class="col-sm-10 page--content">
-                <h4><small id="page-version-name"></small></h4>
-                <hr>
-
-                <!-- content ++ -->
-
-
-
-                <!-- content -- -->
-            </div>
-        </div>
+    <div class="sidebar">
+        <h4 style="text-align: center;" id="page-name"></h4>
+        <div id="versionList"></div>
+        <p class="footer"><small id="page-copyright-text"></small></p>
     </div>
 
-    <footer class="container-fluid">
-        <p id="page-copyright-text"></p>
-    </footer>
+    <div class="content">
+        <h4><small id="page-version-name"></small></h4>
+
+        <!-- content ++ -->
+ 
+
+        <!-- content -- -->
+
+    </div>
 
     <script src="../../../../assets/main.js"></script>
 

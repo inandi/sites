@@ -14,6 +14,7 @@
  */
 class LoadJs {
 
+
     /**
      * @constructor
      * @param {string} pageTitle 
@@ -56,25 +57,27 @@ class LoadJs {
         const ulElement = document.getElementById('versionList');
         // handle latest version
         const hyphenatedVersion = this.convertToHyphenatedVersion(this.latestVersion);
-        const liElement = document.createElement('li');
+        const liElement = document.createElement('a');
         liElement.className = `version--${hyphenatedVersion}`;
         if (this.isLatest) {
             liElement.className += ' active ';
         }
-        liElement.innerHTML = `<a href="${this.hostURL}${this.fileName}.html">${this.latestVersion} (latest)</a>`;
+        liElement.innerHTML = `${this.latestVersion} (latest)`;
+        liElement.href = `${this.hostURL}${this.fileName}.html`;
         ulElement.appendChild(liElement);
 
         // handle old version
         const oldVersionsArray = this.oldVersions();
         oldVersionsArray.forEach(version => {
             const hyphenatedVersion = this.convertToHyphenatedVersion(version);
-            const liElement = document.createElement('li');
+            const liElement = document.createElement('a');
 
             liElement.className = `version--${hyphenatedVersion}`;
             if (version == this.selfVersion) {
                 liElement.className += ' active ';
             }
-            liElement.innerHTML = `<a href="${this.hostURL}url/${this.fileName}/version/${hyphenatedVersion}/${this.fileName}.html">${version}</a>`;
+            liElement.innerHTML = `${version}`;
+            liElement.href = `${this.hostURL}url/${this.fileName}/version/${hyphenatedVersion}/${this.fileName}.html`;
             ulElement.appendChild(liElement);
         });
     }
