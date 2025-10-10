@@ -12,6 +12,14 @@ A mobile application designed to help people quit smoking and live healthier liv
 - Terms & Conditions
 - About Us
 
+### InQuizIt - Android App
+An interactive quiz application for Android.
+
+**Pages:**
+- Privacy Policy
+- Terms & Conditions
+- About Us
+
 ## 🔄 Versioning System
 
 Each app maintains two types of pages:
