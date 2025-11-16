@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../../../../assets/logo.png">
+    <link rel="stylesheet" href="../../../../assets/style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h4 style="text-align: center;" id="page-name"></h4>
+        <div id="versionList"></div>
+        <p class="footer"><small class="donation" id="donation"></small><small id="page-copyright-text"></small></p>
+    </div>
+
+    <div class="content">
+        <h4><small id="page-version-name"></small></h4>
+
+        <!-- content ++ -->
+
+
+        <!-- content -- -->
+
+    </div>
+
+</body>
+<script src="../../../../assets/main.js"></script>
+
+<script>
+    let pageTitle = '__STRING_PAGE_TITLE__';
+    let pageName = 'About Us';
+    let thisPolicyCreationURL = '__STRING_PAGE_CREATION_YEAR__';
+    let isLatest = false;
+    let selfVersion = 'v0.1';
+    let fileName = 'about';
+
+    const pageJS = new LoadJs(pageTitle, pageName, thisPolicyCreationURL, isLatest, selfVersion, fileName);
+    pageJS.load();
+</script>
+
+</html>
