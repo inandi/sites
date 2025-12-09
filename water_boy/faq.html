@@ -21,7 +21,57 @@
         <h4><small id="page-version-name"></small></h4>
 
         <!-- content ++ -->
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>What is Water Boy?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Water Boy is an Android app designed to help you track and maintain your daily water intake, ensuring you stay hydrated throughout the day.</p>
+                </div>
+            </div>
 
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>How does the app track water intake?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>The app allows you to log your water consumption with simple taps. You can set daily goals and track your progress throughout the day.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Can I customize my daily water goal?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes! You can customize your daily water intake goal based on your personal needs, activity level, and health recommendations.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>Does the app work offline?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, Water Boy works offline. All your data is stored locally on your device, so you can track your water intake even without an internet connection.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    <span>How do I contact support?</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>You can reach us at <a href="mailto:water.app.inandi@gmail.com">water.app.inandi@gmail.com</a> for any questions, feedback, or support requests.</p>
+                </div>
+            </div>
+        </div>
         <!-- content -- -->
 
     </div>
@@ -39,6 +89,36 @@
 
     const pageJS = new LoadJs(pageTitle, pageName, thisPolicyCreationURL, isLatest, selfVersion, fileName);
     pageJS.load();
+
+    // Accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', function() {
+                const accordionItem = this.parentElement;
+                const accordionContent = accordionItem.querySelector('.accordion-content');
+                const isActive = this.classList.contains('active');
+                
+                // Close all other accordion items
+                accordionHeaders.forEach(otherHeader => {
+                    if (otherHeader !== this) {
+                        otherHeader.classList.remove('active');
+                        otherHeader.parentElement.querySelector('.accordion-content').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current accordion item
+                if (isActive) {
+                    this.classList.remove('active');
+                    accordionContent.classList.remove('active');
+                } else {
+                    this.classList.add('active');
+                    accordionContent.classList.add('active');
+                }
+            });
+        });
+    });
 </script>
 
 </html>
