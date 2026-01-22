@@ -66,7 +66,7 @@ class LoadJs {
          * @todo Update when new page adds/modifies (e.g., v1.0 → v1.1 → v1.2)
          * @type {string}
          */
-        this.latestVersion = 'v1.0';
+        this.latestVersion = 'v1.1';
     }
 
     /**
@@ -224,6 +224,7 @@ class LoadJs {
     oldVersions() {
         return [
             'v0.1',  // First version (oldest)
+            'v1.0',
             // Add newer versions here as they become archived
         ];
     }
