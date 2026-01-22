@@ -59,7 +59,7 @@ To add pages for a new application:
 
 ## 📧 Contact
 
-For questions or support, contact: **0filers_let@icloud.com**
+For questions or support, contact: **gobinda.nandi.public@gmail.com**
 
 ## ☕ Support
 
